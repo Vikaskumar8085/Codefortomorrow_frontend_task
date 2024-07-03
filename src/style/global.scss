@@ -2,6 +2,7 @@
 @import "./variable/index";
 @import "./product/index";
 @import "./pagination/index";
+@import "./scroll/index";
 
 
 * {
@@ -21,6 +22,10 @@
 ::-webkit-scrollbar {
     width           : 5px;
     height          : 8px;
-    background-color: #ff4a57;
-    /* or add it to the track */
+    background-color: var(--text-sec-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ff4a57;
+
 }

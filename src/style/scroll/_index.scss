@@ -1,0 +1,50 @@
+@import "../mixins/animation";
+
+.ScrollUp {
+    position: fixed;
+    z-index : 1;
+    top     : 90%;
+    left    : 95%;
+
+    button {
+        display         : flex;
+        justify-content : center;
+        align-items     : center;
+        height          : 40px;
+        width           : 40px;
+        border-radius   : 100%;
+        border          : none;
+        color           : var(--bg-white);
+        font-size       : 1.2em;
+        background-image: linear-gradient(90deg, rgba(211, 118, 118, 0.819), rgb(255, 1, 1));
+        transition      : all linear .3s;
+
+        @include animation(2s) {
+            50% {
+                transform: translateY(30%);
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width: 980px) {
+    .ScrollUp {
+        left: 93%;
+    }
+
+}
+
+@media only screen and (max-width: 890px) {
+    .ScrollUp {
+        left: 90%;
+    }
+
+}
+
+@media only screen and (max-width: 500px) {
+    .ScrollUp {
+        left: 85%;
+    }
+
+}

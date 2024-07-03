@@ -1,0 +1,10 @@
+@mixin animation($duration) {
+    $name:name-#{unique-id()};
+    @keyframes #{$name} {
+        @content
+    }
+
+    animation-name           :$name;
+    animation-duration       : $duration;
+    animation-iteration-count: infinite;
+}
