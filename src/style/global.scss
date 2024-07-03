@@ -1,0 +1,26 @@
+@import "./Loader/index";
+@import "./variable/index";
+@import "./product/index";
+@import "./pagination/index";
+
+
+* {
+    margin    : 0px;
+    padding   : 0px;
+    box-sizing: border-box;
+
+}
+
+:root {
+    --bg-white      :#{$white-bg };
+    --bg-sec-white  :#{$white-sec-bg};
+    --text-color    :#{$text-color};
+    --text-sec-color:#{$text-sec-color};
+}
+
+::-webkit-scrollbar {
+    width           : 5px;
+    height          : 8px;
+    background-color: #ff4a57;
+    /* or add it to the track */
+}

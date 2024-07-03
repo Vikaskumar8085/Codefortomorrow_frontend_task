@@ -1,0 +1,13 @@
+.product_title {
+    display : block;
+    position: relative;
+    overflow: hidden;
+
+    h1 {
+        text-align    : center;
+        text-transform: uppercase;
+        font-family   : 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size     : 1.3em;
+        padding-bottom: 10px;
+    }
+}

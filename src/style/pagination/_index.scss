@@ -1,0 +1,25 @@
+.Pagination_wrapper {
+    display : block;
+    overflow: hidden;
+    position: relative;
+    padding : 20px 0px;
+
+    .Pagination_box {
+        display        : flex;
+        justify-content: center;
+        position       : relative;
+        overflow       : hidden;
+        padding        : 20px 0px;
+        align-items    : center;
+        @import "./nextPage";
+
+        p {
+            font-size  : 1em;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+        }
+
+        @import "./prevPage";
+
+    }
+}
