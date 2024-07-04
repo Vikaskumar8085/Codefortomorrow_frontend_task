@@ -1,8 +1,14 @@
 import React, { memo } from "react";
 import Loader from "../Loader";
+import { RxCross1 } from "react-icons/rx";
 
-function ProductCard({ getItems }) {
+function ProductCard({ handleDelete, getItems }) {
   console.log(getItems);
+
+  const DeleteItem = (value) => {
+    handleDelete(value);
+  };
+
   return (
     <>
       <div className="Product_wrapper">
@@ -10,6 +16,7 @@ function ProductCard({ getItems }) {
           getItems.map((item, index) => {
             return (
               <div className="Product_box">
+                <RxCross1 onClick={() => DeleteItem(item.id)} />
                 <div className="product_title">
                   <h1>{item?.title?.slice(0, 25)}</h1>
                 </div>

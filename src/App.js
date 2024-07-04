@@ -3,7 +3,7 @@ import apiInstance from "./Redux/apiInstance/apiInstance";
 import Loader from "./component/Loader";
 import { useDispatch, useSelector } from "react-redux";
 import { SetLoader } from "./Redux/slice/LoaderSlice";
-import { addProduct } from "./Redux/slice/productSlice";
+import { addProduct, delItem } from "./Redux/slice/productSlice";
 import ProductCard from "./component/ProductComponent/ProductCard";
 import Pagination from "./component/ProductComponent/Pagination";
 import ScrollUp from "./component/ScrollUp";
@@ -37,14 +37,6 @@ function App() {
   // sorting
   var getItems = getalldata;
 
-  // getItems?.slice()?.sort((a, b) => {
-  //   if (sortBy === "name") {
-  //     return String(a.title).localeCompare(String(b.title), {
-  //       ignorePunctuation: false,
-  //     });
-  //   }
-  // });
-
   window.addEventListener("scroll", () => {
     if (
       document.body.scrollTop > 80 ||
@@ -63,11 +55,14 @@ function App() {
   getItems = getalldata?.slice(lastpage, firstPage);
   //pagination
 
+  const handleDelete = (value) => {
+    dispatch(delItem(value));
+  };
   return (
     <>
       {isScroll && <ScrollUp />}
       {load && <Loader />}
-      <ProductCard getItems={getItems} />
+      <ProductCard getItems={getItems} handleDelete={handleDelete} />
       <Pagination setpageNo={setpageNo} pageNo={pageNo} />
     </>
   );
